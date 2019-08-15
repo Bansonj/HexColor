@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hex Colors</title>
+    <link rel="stylesheet" href="bg.css">
+</head>
+<body>
+    <div class="container">
+        <h2 class="hexColor">Hex color doe is : <span class="hex"></span></h2>
+
+        <button type="button" class="btn">Click Here To Generate Color</button>
+
+    </div>
+
+
+
+
+
+
+
+    <script>
+        const hexNum = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F'];
+        const body = document.querySelector('body');
+        const button = document.querySelector('button');
+        const hex = document.querySelector('.hex');
+
+        button.addEventListener('click', ()=>{
+            let hexCol = '#';
+
+            for(let i = 0; i < 6; i++){
+                let random = Math.floor(Math.random()*hexNum.length);
+                hexCol += hexNum[random];
+
+                // console.log(hexCol);
+
+            }
+            body.style.backgroundColor = hexCol;
+            hex.innerHTML = hexCol;
+        })
+    </script>
+</body>
+</html>
